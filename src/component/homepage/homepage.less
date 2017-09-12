@@ -135,72 +135,94 @@
   justify-content: flex-start;
   border-radius: 10px;
   position: relative;
-  margin-top: 20px;
-
-
-
+  margin-top: 15px;
+  box-shadow: 1px 2px 6px #c7c8c7;
+  overflow: hidden;
+  &:last-child{
+    margin-bottom: 15px;
+  }
   div{
     &:first-of-type{
       border-top-left-radius: 10px;
       border-bottom-left-radius: 10px;
-      width: 10px;
-      height: 100px;
+      width: 15px;
+      height: 110px;
+      box-shadow: -2px 0 5px #6c6a6b inset;
     }
 
     &:nth-of-type(2){
-      width: calc(~"95vw - (95vw/50+10px)");
       line-height: 0;
-      height: 100px;
+      height: 110px;
+      width: 200px;
       img{
-        width: 100%;
         height: 100%;
       }
     }
-
-
   }
   a{
-    width:50%;
-    height: 100px;
+    width:26%;
+    height: 110px;
     border-top-right-radius: 10px;
     border-bottom-right-radius: 10px;
     display: flex;
     align-items: center;
     flex-direction: column;
     justify-content: center;
+    color: white;
+    position: absolute;
+    right: 0;
 
     @media screen and (max-width: 330px){
       width:33%;
     }
 
+    /*补的两个三角形*/
+    &:before{
+      content: " ";
+      display: block;
+      width: 0;
+      height: 0;
+      position: absolute;
+      left: -19px;
+      top: 50px;
+      z-index: 11;
+    }
+    &:after{
+      content: " ";
+      display: block;
+      width: 0;
+      height: 0;
+      position: absolute;
+      left: -19px;
+      top: 0;
+      box-shadow: -2px 0 3px #6c6a6b inset;
+    }
+
     >span{
       &:first-child{
-        width: 20px;
-        height: 20px;
-        background: #f7ae20;
-        color: white;
-        font-size: 14px;
-        line-height: 20px;
-        text-align: center;
-        border-radius: 50%;
-        margin-bottom: 5px;
-        font-weight: bold;
-
+        margin-top: 30px;
+        img{
+          width: 24px;
+        }
         @media screen and(max-width: 330px) {
-
-          width: 16px;
+          /*width: 16px;
           height: 16px;
           font-size: 12px;
-          line-height: 16px;
+          line-height: 16px;*/
         }
       }
 
       &:nth-child(2){
-        font-size: 16px;
+        font-size: 18px;
         margin-bottom: 5px;
-        @media screen and(max-width: 330px) {
-          font-size: 14px;
+        margin-top: -5px;
+        @media screen and(max-width: 380px) {
+          font-size: 16px;
         }
+        @media screen and(max-width: 330px) {
+          font-size: 12px;
+        }
+
       }
 
       &:last-child{
@@ -209,52 +231,204 @@
         font-size: 16px;
         border-radius: 30px;
         text-align: center;
+        margin-bottom: 30px;
+        background: #FFFFFF;
+        position: relative;
+        &:active{
+          opacity: .8;
+        }
+        img{
+          width: 16px;
+          position: absolute;
+          top:1px;
+          left:2px;
+        }
+        .entrance_text{
+          margin-left: -20px;
+          font-size: 14px;
+
+          @media screen and(max-width: 380px){
+            font-size: 12px;
+            line-height: 25px;
+          }
+          @media screen and(max-width: 330px){
+            font-size: 10px;
+          }
+
+        }
+        .entrance_button{
+          width: 20px;
+          height: 20px;
+          display: block;
+          border-radius: 50%;
+          position: absolute;
+          right:6px;
+          top:2px;
+
+          @media screen and(max-width: 380px){
+            width: 18px;
+            height: 18px;
+            top: 4px;
+            right: 5px;
+          }
+          @media screen and(max-width: 330px){
+            width: 14px;
+            height: 14px;
+            top: 4px;
+            right: 3px;
+          }
+
+          &.green{
+            background: #cde5a6;
+          }
+          &.blue{
+            background: #ddf5fb;
+          }
+          &.orange{
+            background: #ffe9be;
+          }
+          &.purple{
+            background: #eddeff;
+          }
+          &:after{
+            content: " ";
+            display: inline-block;
+            height: 8px;
+            width: 8px;
+            border-width: 2px 2px 0 0;
+            border-style: solid;
+            transform: rotate(45deg);
+            position: absolute;
+            top: 5px;
+            right: 6px;
+
+            @media screen and(max-width: 380px){
+              height: 8px;
+              width: 8px;
+              top: 4px;
+              right: 6px;
+
+            }
+
+            @media screen and(max-width: 330px){
+              height: 6px;
+              width: 6px;
+              top: 3px;
+              right: 4px;
+
+            }
+
+          }
+        }
         @media screen and(max-width: 330px) {
           font-size: 14px;
         }
       }
-
     }
-
   }
 
+/*私有样式*/
 
+  /*绿色*/
   .green{
     background: #8abc23;
   }
-
-  .orange{
-    background: #f7ae20;
-  }
-
   .green_go{
-    background: linear-gradient(left,#90c02b,#c3dc80);
+    background-color:#8abc23;
+    background-image: url("../../images/entrance_green_bg.png");
+    background-size: 100% 100%;
+    text-decoration: none;
+    &:before{
+      border-bottom: 60px solid #8abc13;
+      border-left: 20px solid transparent;
+    }
+    &:after{
+      border-top: 60px solid #8abc13;
+      border-left: 20px solid transparent;
+    }
 
     >span{
-      &:nth-child(2){
-        color: white;
-
-      }
-
       &:last-child{
-        color:#f7ae20;
-        background: white;
+        color:#5b7e15;
+        border: 2px solid #5b7e15;
+        box-shadow: -3px -3px 3px #cde5a6 inset;
+      }
+    }
+  }
+  /*蓝色*/
+  .blue{
+    background: #01b5da;
+  }
+  .blue_go{
+    background-color: #01b5da;
+    background-image: url("../../images/entrance_blue_bg.png");
+    background-size: 100% 100%;
+    &:before{
+      border-bottom: 60px solid #01b5da;
+      border-left: 20px solid transparent;
+    }
+    &:after{
+      border-top: 60px solid #01b5da;
+      border-left: 20px solid transparent;
+    }
+
+    >span{
+      &:last-child{
+        color: #005679;
+        border: 2px solid #005679;
+        box-shadow: -3px -3px 3px #baebf5 inset;
       }
     }
 
   }
+  /*橘色*/
+  .orange{
+    background: #f3a101;
+  }
   .orange_go{
-    background: #e9f5fb;
+    background-color: #f3a101;
+    background-image: url("../../images/entrance_orange_bg.png");
+    background-size: 100% 100%;
+    &:before{
+      border-bottom: 60px solid #f3a101;
+      border-left: 20px solid transparent;
+    }
+    &:after{
+      border-top: 60px solid #f3a101;
+      border-left: 20px solid transparent;
+    }
 
     >span{
-      &:nth-child(2){
-        color:#f7ae20;
-
-      }
-
       &:last-child{
-        background:#f7ae20;
-        color: white;
+        color: #a36c00;
+        border: 2px solid #a36c00;
+        box-shadow: -3px -3px 3px #feeac2 inset;
+      }
+    }
+
+  }
+  /*紫色*/
+  .purple{
+    background: #8d3ef1;
+  }
+  .purple_go{
+    background-color: #8d3ef1;
+    background-image: url("../../images/entrance_purple_bg.png");
+    background-size: 100% 100%;
+    &:before{
+      border-bottom: 60px solid #8d3ef1;
+      border-left: 20px solid transparent;
+    }
+    &:after{
+      border-top: 60px solid #8d3ef1;
+      border-left: 20px solid transparent;
+    }
+
+    >span{
+      &:last-child{
+        color: #551d9b;
+        border: 2px solid #551d9b;
+        box-shadow: -3px -3px 3px #e8d7fd inset;
       }
     }
 

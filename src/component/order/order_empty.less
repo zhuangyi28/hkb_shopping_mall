@@ -1,0 +1,92 @@
+
+.order_empty{
+
+  .order_pic{
+
+    position: relative;
+    width: 332px;
+    height: 200px;
+    margin: 140px auto;
+    margin-bottom: 20px;
+    overflow: hidden;
+    .list{
+      position: absolute;
+      bottom: 0;
+      left: 80px;
+      width: 160px;
+      height: 160px;
+
+      background-size: 100%;
+      background-image:  url("../images/order_list.png");
+
+    }
+    .loading{
+      position: absolute;
+      top: 20px;
+      left: 150px;
+      color: #8abc23;
+
+      &> span {
+        width: 8px;
+        height: 8px;
+        background-color: #8abc23;
+        border-radius: 100%;
+        opacity: 0;
+        display: inline-block;
+        animation: bouncedelay 1.4s ease-in-out forwards;
+        &.bounce1 {
+          animation-delay: 1s;
+        }
+
+        &.bounce2 {
+          animation-delay: 2s;
+
+        }
+        &.bounce3 {
+          animation-delay: 3s;
+
+        }
+
+        &.bounce4 {
+          animation-delay: 4s;
+
+        }
+        &.bounce5 {
+          animation-delay: 5s;
+
+        }
+
+
+
+        @keyframes bouncedelay {
+          0% {
+            opacity:0;
+          }
+          100% {
+            opacity:1;
+            }
+        }
+      }
+
+
+    }
+    .bird{
+      position: absolute;
+      top: 10px;
+      left: 100px;
+      width: 50px;
+      height: 50px;
+      background-size: 100%;
+      background-image:  url("../images/order_bird.png");
+    }
+
+  }
+
+
+  .tip_empty{
+    padding: 0 auto;
+    color: #4a4a4a;
+    font-size: 16px;
+    text-align: center;
+  }
+}
